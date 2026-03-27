@@ -23,9 +23,6 @@ app.post("/users", async (req, res) => {
     );
     res.status(201).json(result.rows[0]);
   } catch (error) {
-    if (error.code === "23505") {
-      return res.status(400).json({ error: "Bu email mavjud" });
-    }
     res.status(500).json({ error: "Server error" });
   }
 });
@@ -238,6 +235,23 @@ app.delete("/comments/:id", async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
+app.delete("/posts/:id/like", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const result = await pool.query(
+      "DELETE FROM likes WHERE id = $1 RETURNING *",
+      [id]
+    );
+
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: "likiestopilmadi" });
+    }
+
+    res.json({ message: "likes ochirildi", deleted: result.rows[0] });
+  } catch (error) {
+    res.status(500).json({ error: "Server error" });
+  }
+});
 app.get("/users/:id/posts", async (req, res) => {
   const { id } = req.params;
   try {
@@ -251,6 +265,7 @@ app.get("/users/:id/posts", async (req, res) => {
       [id]
     );
 
+
     res.json(result.rows);
   } catch (error) {
     res.status(500).json({ error: "xatolik bor serverda " });
@@ -260,12 +275,20 @@ app.get("/", (req, res) => {
   res.send("Blog Platform API ishlayapti");
 });
 
+
+app.get('/likes',async (req,res)=>{
+  const {id}=req.body()
+
+  c
+})
 app.listen(PORT, async () => {
   try {
     await pool.query("SELECT 1");
     console.log("PostgreSQL connected");
     console.log(`Server running on http://localhost:${PORT}`);
   } catch (error) {
-    console.log("DB connection error:", error.message);
+    console.log("xatolik bor:", error.message);
   }
 });
+
+

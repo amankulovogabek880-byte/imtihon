@@ -16,7 +16,7 @@ Quyidagilarni mavzularni ishlatish kerak:
 ---
 
 
-### men bitta like amalini qilaolmadim lekin boshqa amallarim ishlayapti
+### men bitta like amalini qilaolmadim yani post qismini lekin boshqa amallarim ishlayapti
 
 
 ## ishga tuwiriw
