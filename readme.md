@@ -58,4 +58,4 @@ email:"mamamm@.com "
 
 ##
 ##
-## men  routes va yana boshqalar o'tilganda kelmagan edim oshani uchun qilganim yoq 
+## men  routes va yana boshqalar o'tilganda kelmagan edim oshani uchun qilganim yoq yani unchalik chunmay qolgan edim 
