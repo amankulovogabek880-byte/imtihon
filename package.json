@@ -4,7 +4,7 @@
     "description": "A simple blog platform API",
     "main": "index.js",
     "scripts": {
-        "start": "node index.js",
+        "migrate":"node migrate.js",
         "dev": "nodemon index.js"
     },
     "dependencies": {

@@ -23,7 +23,7 @@ Quyidagilarni mavzularni ishlatish kerak:
 
 ---
 npm  run dev      --manawu kamanda bilan shlaydi 
-
+npm run migrate   bu migratsiyani ishga tuwuradi
 ---
 
 ## manawu korinishda post joylanadi
